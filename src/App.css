@@ -1,18 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +9,91 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  height: 90%;
+}
+.container2 {
+  backdrop-filter: blur(15px);
+  width: 50%;
+  height: 65%;
+}
+.container2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-@keyframes App-logo-spin {
+.container2:before {
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.194);
+  filter: blur(10px);
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(270deg, #7b13e7, #cae713);
+  background-size: 400% 400%;
+
+  animation: AnimationName 11s ease infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*  */
+.cell {
+  background: linear-gradient(119deg, #b213da, #a069e3, #e5d6e7);
+  background-size: 600% 600%;
+
+  animation: AnimationName 8s ease infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*  */
+.glow {
+  font-size: 52px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
   from {
-    transform: rotate(0deg);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    transform: rotate(360deg);
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
